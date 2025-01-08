@@ -21,7 +21,8 @@ class _DatescreenState extends State<Datescreen> {
 
   Future<Usermodel> fetchData() async {
     try {
-      var response = await Dio().get('https://miracocopepsi.com/admin/mayur/data_darsh/data.json');
+      var response = await Dio()
+          .get('https://miracocopepsi.com/admin/mayur/data_darsh/data.json');
 
       if (response.statusCode == 200) {
         print(response.data);
@@ -108,7 +109,9 @@ class _DatescreenState extends State<Datescreen> {
 
                 return ListView.builder(
                   itemCount: uniqueDates.length,
-                  padding: EdgeInsets.symmetric(vertical: isWideScreen ? 16 : 8, horizontal: isWideScreen ? 32 : 16),
+                  padding: EdgeInsets.symmetric(
+                      vertical: isWideScreen ? 16 : 8,
+                      horizontal: isWideScreen ? 32 : 16),
                   itemBuilder: (context, index) {
                     final date = uniqueDates[index];
                     return Card(

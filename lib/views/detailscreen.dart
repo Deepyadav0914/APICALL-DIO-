@@ -69,19 +69,19 @@ class _DetailscreenState extends State<Detailscreen> {
               children: [
                 Card(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
+                    borderRadius: BorderRadius.circular(12),
                   ),
                   elevation: 5,
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(16),
+                    borderRadius: BorderRadius.circular(12),
                     child: Image.network(
                       imgurl,
-                      height: isWideScreen ? 250 : 200,
+                      height: isWideScreen ? 250 : 250,
                       width: double.infinity,
-                      fit: BoxFit.cover,
+                      fit: BoxFit.fill,
                       errorBuilder: (context, error, stackTrace) {
                         return Container(
-                          height: isWideScreen ? 250 : 200,
+                          height: isWideScreen ? 250 : 250,
                           color: Colors.grey[200],
                           child: const Icon(
                             Icons.broken_image,
@@ -128,14 +128,11 @@ class _DetailscreenState extends State<Detailscreen> {
                   ),
                 ),
                 const SizedBox(height: 40),
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     ElevatedButton.icon(
-                      onPressed: () {
-
-                      },
+                      onPressed: () {},
                       icon: const Icon(Icons.share),
                       label: const Text("Share"),
                       style: ElevatedButton.styleFrom(
@@ -167,3 +164,4 @@ class _DetailscreenState extends State<Detailscreen> {
     );
   }
 }
+

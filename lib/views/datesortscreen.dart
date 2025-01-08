@@ -5,7 +5,6 @@ import 'detailscreen.dart';
 class DatesortScreen extends StatelessWidget {
   final String date;
   final List<Datum> data;
-
   const DatesortScreen({super.key, required this.date, required this.data});
 
   @override
@@ -36,7 +35,9 @@ class DatesortScreen extends StatelessWidget {
           final isWideScreen = constraints.maxWidth > 600;
           return ListView.builder(
             itemCount: data.length,
-            padding: EdgeInsets.symmetric(vertical: isWideScreen ? 16 : 8, horizontal: isWideScreen ? 32 : 16),
+            padding: EdgeInsets.symmetric(
+                vertical: isWideScreen ? 16 : 8,
+                horizontal: isWideScreen ? 32 : 16),
             itemBuilder: (context, index) {
               final item = data[index];
               return Card(
@@ -47,6 +48,7 @@ class DatesortScreen extends StatelessWidget {
                 margin: const EdgeInsets.symmetric(vertical: 8),
                 child: ListTile(
                   onTap: () async {
+                    print(item);
                     Navigator.push<Datum>(
                       context,
                       MaterialPageRoute(
