@@ -21,7 +21,7 @@ class DatesortScreen extends StatelessWidget {
           ),
         ),
         title: Text(
-          "Entries for $date",
+          "$date",
           style: const TextStyle(
             color: Colors.white,
             fontSize: 22,
